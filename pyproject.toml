@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "fikslang"
+version = "0.1.0"
+description = ""
+authors = ["Petr Stastny <petr.stastny@fit.cvut.cz>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+fikslang = "fikslang.src.__main__:main"
