@@ -14,7 +14,7 @@ class Rotate(Instruction):
     def from_params(cls, params: list[str]) -> Self:
         return cls(rotate_elements=int(params[0]))
 
-    def execute(self, state: MemoryState, pc: int) -> int:
+    def execute(self, state: MemoryState, pc: int, labels: dict[str, int]) -> int:
         to_rotate = state.stack[-self.rotate_elements :]
         rotated = reversed(to_rotate)
         state.stack = state.stack[: -self.rotate_elements] + list(rotated)

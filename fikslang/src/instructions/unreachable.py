@@ -5,9 +5,8 @@ from fikslang.src.memory_state import MemoryState
 
 
 @dataclass
-class Clear(Instruction):
-    opcode = "CLEAR"
+class Unreachable(Instruction):
+    opcode = "UNREACHABLE"
 
     def execute(self, state: MemoryState, pc: int, labels: dict[str, int]) -> int:
-        state.stack.clear()
-        return pc + 1
+        raise ValueError("Unreachable instruction reached")

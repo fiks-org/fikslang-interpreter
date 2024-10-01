@@ -6,15 +6,17 @@ from fikslang.src.memory_state import MemoryState
 
 
 @dataclass
-class Push(Instruction):
-    opcode = "PUSH"
-
-    to_push: int
+class Jump(Instruction):
+    opcode = "JMP"
+    target: str
 
     @classmethod
     def from_params(cls, params: list[str]) -> Self:
-        return cls(to_push=int(params[0]))
+        return cls(target=params[0])
 
     def execute(self, state: MemoryState, pc: int, labels: dict[str, int]) -> int:
-        state.stack.append(self.to_push)
-        return pc + 1
+        try:
+            return int(self.target) + pc  # relative jump
+        except ValueError:
+            # probably is a label
+            return labels[self.target]  # absolute jump

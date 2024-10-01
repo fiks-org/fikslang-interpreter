@@ -8,5 +8,5 @@ from fikslang.src.memory_state import MemoryState
 class Nop(Instruction):
     opcode = "NOP"
 
-    def execute(self, _state: MemoryState, pc: int) -> int:
+    def execute(self, state: MemoryState, pc: int, labels: dict[str, int]) -> int:
         return pc + 1

@@ -19,7 +19,7 @@ class Instruction:
         return cls()
 
     @abstractmethod
-    def execute(self, state: MemoryState, pc: int) -> int:
+    def execute(self, state: MemoryState, pc: int, labels: dict[str, int]) -> int:
         """
         Execute the instruction on the given state
         :return: New PC

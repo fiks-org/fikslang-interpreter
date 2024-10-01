@@ -2,6 +2,8 @@ from fikslang.src.instructions import find_instruction
 from fikslang.src.instructions.instruction import Instruction
 from fikslang.src.memory_state import MemoryState
 
+MAX_INSTRUCTIONS = 5000
+
 
 class Machine:
     memory: MemoryState
@@ -22,11 +24,13 @@ class Machine:
             if line == "" or line.startswith("#"):
                 continue
 
+            next_pc = len(self.execution_memory)
+
             words = line.strip().split(" ")
 
             if words[0].endswith(":"):
                 label_name = words[0][:-1]
-                self.labels[label_name] = len(self.execution_memory)
+                self.labels[label_name] = next_pc
             else:
                 # Try to find an instruction
                 opcode = words[0].upper()
@@ -48,6 +52,12 @@ class Machine:
                     ) from e
 
     def execute(self) -> None:
+        instructions_executed = 0
+
         while self.pc < len(self.execution_memory):
             instruction = self.execution_memory[self.pc]
-            self.pc = instruction.execute(self.memory, self.pc)
+            self.pc = instruction.execute(self.memory, self.pc, self.labels)
+
+            instructions_executed += 1
+            if instructions_executed >= MAX_INSTRUCTIONS:
+                raise ValueError("Maximum number of instructions executed exceeded")
