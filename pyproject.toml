@@ -6,7 +6,8 @@ authors = ["Petr Stastny <petr.stastny@fit.cvut.cz>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
+time-machine = "^2.15.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
