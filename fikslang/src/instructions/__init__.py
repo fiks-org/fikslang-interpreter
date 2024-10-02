@@ -12,8 +12,9 @@ from fikslang.src.instructions.save import Save
 from fikslang.src.instructions.proc import Proc
 from fikslang.src.instructions.ret import Ret
 from fikslang.src.instructions.cmp import Cmp
+from fikslang.src.instructions.wait import Wait
 
-INSTRUCTIONS = [Clear, Rotate, Time, Nop, Push, Jump, Unreachable, Save, Proc, Ret, Cmp]
+INSTRUCTIONS = [Clear, Rotate, Time, Nop, Push, Jump, Unreachable, Save, Proc, Ret, Cmp, Wait]
 
 
 def find_instruction(opcode: str) -> Type[Instruction] | None:
