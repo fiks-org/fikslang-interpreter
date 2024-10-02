@@ -9,8 +9,9 @@ from fikslang.src.instructions.rotate import Rotate
 from fikslang.src.instructions.time import Time
 from fikslang.src.instructions.unreachable import Unreachable
 from fikslang.src.instructions.save import Save
+from fikslang.src.instructions.proc import Proc
 
-INSTRUCTIONS = [Clear, Rotate, Time, Nop, Push, Jump, Unreachable, Save]
+INSTRUCTIONS = [Clear, Rotate, Time, Nop, Push, Jump, Unreachable, Save, Proc]
 
 
 def find_instruction(opcode: str) -> Type[Instruction] | None:
