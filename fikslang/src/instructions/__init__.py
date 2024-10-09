@@ -22,6 +22,7 @@ from fikslang.src.instructions.time import Time
 from fikslang.src.instructions.unreachable import Unreachable
 from fikslang.src.instructions.wait import Wait
 from fikslang.src.instructions.sort import Sort
+from fikslang.src.instructions.delete import Delete
 
 INSTRUCTIONS: list[Type[Instruction]] = [
     Clear,
@@ -45,6 +46,7 @@ INSTRUCTIONS: list[Type[Instruction]] = [
     Modulo,
     Inc,
     Sort,
+    Delete,
 ]
 
 
