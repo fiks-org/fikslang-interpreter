@@ -26,6 +26,7 @@ from fikslang.src.instructions.delete import Delete
 from fikslang.src.instructions.max_index import MaxIndex
 from fikslang.src.instructions.pack2 import Pack2
 from fikslang.src.instructions.unpack2 import Unpack2
+from fikslang.src.instructions.exit import Exit
 
 INSTRUCTIONS: list[Type[Instruction]] = [
     Clear,
@@ -53,6 +54,7 @@ INSTRUCTIONS: list[Type[Instruction]] = [
     MaxIndex,
     Pack2,
     Unpack2,
+    Exit,
 ]
 
 
