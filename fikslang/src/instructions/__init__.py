@@ -22,7 +22,8 @@ from fikslang.src.instructions.time import Time
 from fikslang.src.instructions.unreachable import Unreachable
 from fikslang.src.instructions.wait import Wait
 from fikslang.src.instructions.sort import Sort
-from fikslang.src.instructions.delete import Delete
+from fikslang.src.instructions.delete import Delete 
+from fikslang.src.instructions.max_index import MaxIndex
 from fikslang.src.instructions.pack2 import Pack2
 from fikslang.src.instructions.unpack2 import Unpack2
 
@@ -49,6 +50,7 @@ INSTRUCTIONS: list[Type[Instruction]] = [
     Inc,
     Sort,
     Delete,
+    MaxIndex,
     Pack2,
     Unpack2,
 ]
