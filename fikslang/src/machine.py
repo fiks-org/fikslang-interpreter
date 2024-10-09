@@ -1,11 +1,13 @@
-from fikslang.src.instructions import find_instruction
+from fikslang.src.instructions import find_instruction 
 from fikslang.src.instructions.instruction import Instruction
 from fikslang.src.memory_state import MemoryState
+from datetime import datetime, UTC
 
 MAX_INSTRUCTIONS = 5000
 
 
 class Machine:
+    start_time: datetime
     memory: MemoryState
     pc: int
 
@@ -13,6 +15,7 @@ class Machine:
     labels: dict[str, int]
 
     def __init__(self, source: str):
+        self.start_time = datetime.now(UTC)
         self.memory = MemoryState()
         self.pc = 0
         self.execution_memory = []

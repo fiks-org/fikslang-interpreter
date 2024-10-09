@@ -28,6 +28,7 @@ from fikslang.src.instructions.pack2 import Pack2
 from fikslang.src.instructions.unpack2 import Unpack2
 from fikslang.src.instructions.exit import Exit
 from fikslang.src.instructions.vecsub import VecSub
+from fikslang.src.instructions.uptime import Uptime
 
 INSTRUCTIONS: list[Type[Instruction]] = [
     Clear,
@@ -56,6 +57,7 @@ INSTRUCTIONS: list[Type[Instruction]] = [
     Pack2,
     Unpack2,
     Exit,
+    Uptime,
     VecSub
 ]
 
