@@ -15,6 +15,7 @@ from fikslang.src.instructions.pow import Pow
 from fikslang.src.instructions.rotate import Rotate
 from fikslang.src.instructions.modulo import Modulo
 from fikslang.src.instructions.save import Save
+from fikslang.src.instructions.inc import Inc
 from fikslang.src.instructions.skip_if import SkipIf 
 from fikslang.src.instructions.parse import Parse
 from fikslang.src.instructions.time import Time
@@ -41,6 +42,7 @@ INSTRUCTIONS: list[Type[Instruction]] = [
     Unreachable,
     Wait,
     Modulo,
+    Inc,
 ]
 
 
