@@ -27,6 +27,7 @@ from fikslang.src.instructions.max_index import MaxIndex
 from fikslang.src.instructions.pack2 import Pack2
 from fikslang.src.instructions.unpack2 import Unpack2
 from fikslang.src.instructions.exit import Exit
+from fikslang.src.instructions.vecsub import VecSub
 
 INSTRUCTIONS: list[Type[Instruction]] = [
     Clear,
@@ -55,6 +56,7 @@ INSTRUCTIONS: list[Type[Instruction]] = [
     Pack2,
     Unpack2,
     Exit,
+    VecSub
 ]
 
 
