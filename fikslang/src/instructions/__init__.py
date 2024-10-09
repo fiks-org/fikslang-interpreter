@@ -17,10 +17,11 @@ from fikslang.src.instructions.modulo import Modulo
 from fikslang.src.instructions.save import Save
 from fikslang.src.instructions.inc import Inc
 from fikslang.src.instructions.skip_if import SkipIf 
-from fikslang.src.instructions.parse import Parse
+from fikslang.src.instructions.parse import Parse   
 from fikslang.src.instructions.time import Time
 from fikslang.src.instructions.unreachable import Unreachable
 from fikslang.src.instructions.wait import Wait
+from fikslang.src.instructions.sort import Sort
 
 INSTRUCTIONS: list[Type[Instruction]] = [
     Clear,
@@ -43,6 +44,7 @@ INSTRUCTIONS: list[Type[Instruction]] = [
     Wait,
     Modulo,
     Inc,
+    Sort,
 ]
 
 
