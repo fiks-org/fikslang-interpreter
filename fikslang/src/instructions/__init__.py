@@ -10,6 +10,7 @@ from fikslang.src.instructions.glue import Glue
 from fikslang.src.instructions.inc import Inc
 from fikslang.src.instructions.instruction import Instruction
 from fikslang.src.instructions.jmp import Jump
+from fikslang.src.instructions.len import Len
 from fikslang.src.instructions.max_index import MaxIndex
 from fikslang.src.instructions.modulo import Modulo
 from fikslang.src.instructions.mul import Mul
@@ -36,6 +37,7 @@ INSTRUCTIONS: list[Type[Instruction]] = [
     Glue,
     Flip,
     Jump,
+    Len,
     Nop,
     Proc,
     Push,
