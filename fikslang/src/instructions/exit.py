@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from fikslang.src.instructions.instruction import Instruction
 from fikslang.src.memory_state import MemoryState
 
+
 @dataclass
 class Exit(Instruction):
     opcode = "EXIT"
