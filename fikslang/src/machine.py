@@ -2,7 +2,7 @@ from fikslang.src.instructions import find_instruction
 from fikslang.src.instructions.instruction import Instruction
 from fikslang.src.memory_state import MemoryState
 
-MAX_INSTRUCTIONS = 5000
+MAX_INSTRUCTIONS = 20_000
 
 
 class Machine:

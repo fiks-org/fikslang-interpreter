@@ -7,7 +7,12 @@ from fikslang.src.machine import Machine
 
 def main() -> None:
     if len(sys.argv) < 2:
-        print("Usage: fikslang <source>")
+        print("Usage: fikslang <source> (state.json)")
+        print()
+        print("Source file contains source code to execute.")
+        print()
+        print("State.json is optional. If it is present, it should contain")
+        print('two fields: "stack" (int[]) and "memory" (map[int, int]).')
         return
 
     with open(sys.argv[1], "r") as f:
@@ -25,7 +30,7 @@ def main() -> None:
 
         if state is not None:
             machine.memory.stack = state["stack"]
-            machine.memory.heap = state["memory"]
+            machine.memory.heap = {int(k): v for k, v in state["memory"].items()}
 
         with suppress(SystemExit):
             machine.execute()
@@ -57,3 +62,7 @@ def main() -> None:
             print(json.dumps({"error": message}))
 
         sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
