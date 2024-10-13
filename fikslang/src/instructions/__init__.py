@@ -17,6 +17,7 @@ from fikslang.src.instructions.mul import Mul
 from fikslang.src.instructions.nop import Nop
 from fikslang.src.instructions.pack2 import Pack2
 from fikslang.src.instructions.parse import Parse
+from fikslang.src.instructions.pop2 import Pop2
 from fikslang.src.instructions.pow import Pow
 from fikslang.src.instructions.proc import Proc
 from fikslang.src.instructions.push import Push
@@ -34,33 +35,34 @@ from fikslang.src.instructions.wait import Wait
 INSTRUCTIONS: list[Type[Instruction]] = [
     Clear,
     Cmp,
-    Glue,
+    Delete,
+    Dup,
+    Exit,
     Flip,
+    Glue,
+    Inc,
     Jump,
     Len,
+    MaxIndex,
+    Modulo,
+    Mul,
     Nop,
+    Pack2,
+    Parse,
+    Pop2,
+    Pow,
     Proc,
     Push,
     Ret,
-    Mul,
-    Pow,
     Rotate,
     Save,
     SkipIf,
-    Parse,
-    Time,
-    Unreachable,
-    Wait,
-    Modulo,
-    Inc,
     Sort,
-    Delete,
-    Dup,
-    MaxIndex,
-    Pack2,
+    Time,
     Unpack2,
-    Exit,
+    Unreachable,
     VecSub,
+    Wait,
 ]
 
 
