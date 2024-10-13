@@ -1,8 +1,8 @@
 from dataclasses import dataclass
-from typing import Self
 
 from fikslang.src.instructions.instruction import Instruction
 from fikslang.src.memory_state import MemoryState
+
 
 @dataclass
 class VecSub(Instruction):
@@ -12,9 +12,12 @@ class VecSub(Instruction):
         if len(state.stack) % 2 != 0:
             state.heap[1] = 42
             return pc + 1
-        first_half = state.stack[-len(state.stack)//2:]
-        second_half = state.stack[-len(state.stack)//2:]
+
+        first = state.stack[::2]
+        second = state.stack[1::2]
         state.stack.clear()
-        for i in range(len(first_half)):
-            state.stack.append(first_half[i] - second_half[i])
+
+        for i in range(len(first)):
+            state.stack.append(first[i] - second[i])
+
         return pc + 1

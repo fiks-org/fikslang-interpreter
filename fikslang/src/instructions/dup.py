@@ -5,10 +5,9 @@ from fikslang.src.memory_state import MemoryState
 
 
 @dataclass
-class MaxIndex(Instruction):
-    opcode = "MAX_INDEX"
+class Dup(Instruction):
+    opcode = "DUP"
 
     def execute(self, state: MemoryState, pc: int, labels: dict[str, int]) -> int:
-        max_key = max(state.heap.keys())
-        state.stack.append(max_key)
+        state.stack.append(state.stack[-1])
         return pc + 1

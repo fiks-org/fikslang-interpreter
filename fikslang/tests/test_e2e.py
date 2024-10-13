@@ -10,7 +10,9 @@ from fikslang.src.machine import Machine
 SOURCES_PATH = Path(__file__).parent / "sources"
 
 
-@pytest.mark.parametrize("test_name", ["time", "rotate", "jmp"])
+@pytest.mark.parametrize(
+    "test_name", ["time", "rotate", "jmp", "sort", "pack-unpack", "vecsub"]
+)
 @time_machine.travel(datetime(2024, 1, 29, 23, 30, 59))
 def test_e2e(test_name: str):
     source = SOURCES_PATH / f"{test_name}.fiks"
