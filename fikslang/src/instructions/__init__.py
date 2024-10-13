@@ -26,6 +26,7 @@ from fikslang.src.instructions.rotate import Rotate
 from fikslang.src.instructions.save import Save
 from fikslang.src.instructions.skip_if import SkipIf
 from fikslang.src.instructions.sort import Sort
+from fikslang.src.instructions.swap import Swap
 from fikslang.src.instructions.time import Time
 from fikslang.src.instructions.unpack2 import Unpack2
 from fikslang.src.instructions.unreachable import Unreachable
@@ -58,6 +59,7 @@ INSTRUCTIONS: list[Type[Instruction]] = [
     Save,
     SkipIf,
     Sort,
+    Swap,
     Time,
     Unpack2,
     Unreachable,
