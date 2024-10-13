@@ -17,7 +17,11 @@ class STF(Instruction):
         return cls(limit=-int(params[0]) if len(params) >= 1 else None)
 
     def execute(self, state: MemoryState, pc: int, labels: dict[str, int]) -> int:
-        target = Path("usersaves") / f"{state.stack[-1]}.fiksStack"
+        dir = Path("usersaves")
+        if not dir.exists():
+            dir.mkdir()
+
+        target = dir / f"{state.stack[-1]}.fiksStack"
 
         target.write_text(json.dumps(state.stack[self.limit :]))
 

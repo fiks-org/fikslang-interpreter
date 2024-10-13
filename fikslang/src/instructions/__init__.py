@@ -26,6 +26,7 @@ from fikslang.src.instructions.pow import Pow
 from fikslang.src.instructions.proc import Proc
 from fikslang.src.instructions.push import Push
 from fikslang.src.instructions.ret import Ret
+from fikslang.src.instructions.rmmem import RMmem
 from fikslang.src.instructions.rotate import Rotate
 from fikslang.src.instructions.save import Save
 from fikslang.src.instructions.skip_if import SkipIf
@@ -65,6 +66,7 @@ INSTRUCTIONS: list[Type[Instruction]] = [
     Push,
     Ret,
     Rotate,
+    RMmem,
     Save,
     SkipIf,
     Sort,
