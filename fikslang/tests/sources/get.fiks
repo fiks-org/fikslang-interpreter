@@ -1,0 +1,16 @@
+PUSH 10
+
+# Lowercase is okay
+SKIP_IF ne0
+UNREACHABLE
+CLEAR
+
+PUSH 10
+MVMEM
+PUSH 20
+MVMEM
+
+CLEAR
+
+# Test get
+GET 0 2

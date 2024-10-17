@@ -11,7 +11,7 @@ SOURCES_PATH = Path(__file__).parent / "sources"
 
 
 @pytest.mark.parametrize(
-    "test_name", ["time", "rotate", "jmp", "sort", "pack-unpack", "vecsub"]
+    "test_name", ["time", "rotate", "jmp", "sort", "pack-unpack", "vecsub", "get"]
 )
 @time_machine.travel(datetime(2024, 1, 29, 23, 30, 59))
 def test_e2e(test_name: str):
@@ -20,6 +20,9 @@ def test_e2e(test_name: str):
 
     source_code = source.read_text()
     expected = json.loads(expected_result.read_text())
+
+    # Make keys int-based
+    expected["heap"] = {int(k): v for k, v in expected["heap"].items()}
 
     machine = Machine(source_code)
 
