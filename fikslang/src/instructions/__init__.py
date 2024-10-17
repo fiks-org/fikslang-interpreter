@@ -8,6 +8,7 @@ from fikslang.src.instructions.dup import Dup
 from fikslang.src.instructions.exit import Exit
 from fikslang.src.instructions.flip import Flip
 from fikslang.src.instructions.fts import FTS
+from fikslang.src.instructions.get import Get
 from fikslang.src.instructions.glue import Glue
 from fikslang.src.instructions.inc import Inc
 from fikslang.src.instructions.instruction import Instruction
@@ -48,6 +49,7 @@ INSTRUCTIONS: list[Type[Instruction]] = [
     Exit,
     Flip,
     FTS,
+    Get,
     Glue,
     Inc,
     Jump,
