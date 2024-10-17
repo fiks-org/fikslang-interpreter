@@ -1,5 +1,5 @@
 def is_jump_condition_true(condition: str, stack: list[int]) -> bool:
-    match condition:
+    match condition.upper():
         case "GT0":
             return stack[-1] > 0
         case "LE0":
