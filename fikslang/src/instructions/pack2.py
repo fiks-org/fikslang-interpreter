@@ -4,6 +4,7 @@ from math import floor, log2
 from fikslang.src.instructions.instruction import Instruction
 from fikslang.src.memory_state import MemoryState
 
+
 @dataclass
 class Pack2(Instruction):
     opcode = "PACK2"
@@ -15,7 +16,7 @@ class Pack2(Instruction):
         if b == 0:
             bl = 1
         else:
-            bl = floor(log2(b))+1
+            bl = floor(log2(b)) + 1
         c = 0
         cl = 0
         bl2 = bl
@@ -24,5 +25,5 @@ class Pack2(Instruction):
             c += bl % 2
             bl //= 2
             cl += 1
-        state.stack.append((((a << bl2) + b)*3 + 2) * 3 ** cl + c)
+        state.stack.append((((a << bl2) + b) * 3 + 2) * 3**cl + c)
         return pc + 1
