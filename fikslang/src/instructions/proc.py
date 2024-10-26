@@ -21,4 +21,8 @@ class Proc(Instruction):
             return int(self.target) + pc  # relative jump
         except ValueError:
             # probably is a label
-            return labels[self.target]  # absolute jump
+            try:
+                return labels[self.target]  # absolute jump
+            except KeyError:
+                # Raise more helpful message
+                raise ValueError(f'Unknown label: "{self.target}"') from None
